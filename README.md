@@ -1,24 +1,21 @@
-# README
+# Pizza Time
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Pizza Time is a mock pizza order management application. Submit your customers orders and let Pizza Time handle the rest!
 
-Things you may want to cover:
+## Getting Started
 
-* Ruby version
+Install dependencies and setup database.
+```
+bundle install
+rake db:create db:migrate
+```
 
-* System dependencies
+Start development server.
+```
+rails s
+```
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Running Tests
+```
+rspec
+```
