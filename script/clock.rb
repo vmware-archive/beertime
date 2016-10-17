@@ -7,5 +7,5 @@ module Clockwork
     job_handler = JobHandler.new
     job_handler.handle(job)
   end
-  every(10.seconds, 'frequent.job')
+  every(1.minutes, 'every.minute.job')
 end
