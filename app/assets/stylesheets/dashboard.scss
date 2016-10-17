@@ -1,8 +1,13 @@
 @import 'colors';
 
 .beertime {
-  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   .title {
     color: $foreground;
+  }
+  .menu {
+    list-style: none;
+    font-size: larger;
   }
 }
