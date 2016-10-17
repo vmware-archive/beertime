@@ -13,4 +13,4 @@ setup:
 	@rails db:migrate RAILS_ENV=test
 
 deploy:
-	@cf push pizzatime
+	@cf push beertime

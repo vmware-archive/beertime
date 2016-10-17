@@ -1,6 +1,6 @@
-# Pizza Time
+# Beer Time
 
-Pizza Time is a mock pizza order management application. Submit your customers orders and let Pizza Time handle the rest!
+Beer Time helps plan a beer order.
 
 ## Getting Started
 

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
-  resources :pizzerias
-  root "pizzerias#index"
+  resource :dashboard, controller: :dashboard
+  resources :beers
+  root "dashboard#show"
 end

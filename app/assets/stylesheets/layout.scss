@@ -1,0 +1,10 @@
+@import 'colors';
+
+body {
+  color: $foreground;
+  background: $background;
+}
+
+.beertime {
+  display: flex;
+}

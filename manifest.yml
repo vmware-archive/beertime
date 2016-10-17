@@ -1,9 +1,9 @@
 ---
 applications:
-- name: pizzatime
+- name: beertime
   memory: 256M
   instances: 1
   path: .
   command: bundle install && bundle exec rails db:migrate && bundle exec rails s -p $PORT
   services:
-    - pizzatime_postgres
+    - beertime_postgres

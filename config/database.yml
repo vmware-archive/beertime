@@ -4,8 +4,8 @@ default: &default
 
 development:
   <<: *default
-  database: pizzatime_development
+  database: beertime_development
 
 test:
   <<: *default
-  database: pizzatime_test
+  database: beertime_test

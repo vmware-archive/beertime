@@ -1,0 +1,8 @@
+@import 'colors';
+
+.beertime {
+  justify-content: center;
+  .title {
+    color: $foreground;
+  }
+}
