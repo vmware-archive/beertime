@@ -4,8 +4,10 @@ body {
   color: $foreground;
   background: $background;
   font-family: "Lucida Console", Monaco, monospace;
+  font-size: 1rem;
 }
 
 .beertime {
+  font-size: 1.5em;
   display: flex;
 }
