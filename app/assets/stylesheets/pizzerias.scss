@@ -1,3 +1,14 @@
-// Place all the styles related to the Pizzerias controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+$background: #000000;
+$foreground: #1B5E20;
+
+body {
+  background: $background;
+}
+
+.pizzatime {
+  display: flex;
+  justify-content: center;
+  .title {
+    color: $foreground;
+  }
+}
