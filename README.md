@@ -15,6 +15,10 @@ Start development server.
 rails s
 ```
 
+Set up environment variables.
+
+For HTTP Basic Auth, make sure to set up `HTTP_BASIC_AUTH_USERNAME` and `HTTP_BASIC_AUTH_PASSWORD`
+
 ## Running Tests
 ```
 rspec
