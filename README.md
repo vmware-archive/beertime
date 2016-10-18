@@ -22,6 +22,7 @@ rspec
 
 ## Cloud Foundry
 
+Run this after the first time you deploy to PWS.
 ```
-cf ssh beertime --command 'rake db:seed'
+cf ssh beertime -c '/tmp/lifecycle/launcher "app" "rake db:seed" ""'
 ```
