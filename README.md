@@ -19,3 +19,9 @@ rails s
 ```
 rspec
 ```
+
+## Cloud Foundry
+
+```
+cf ssh beertime --command 'rake db:seed'
+```

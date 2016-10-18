@@ -7,12 +7,3 @@ applications:
   command: bundle install && bundle exec rails db:migrate && bundle exec rails s -p $PORT
   services:
     - beertime_postgres
-- name: beertime-worker
-  memory: 256M
-  instances: 1
-  no-route: true
-  health-check-type: none
-  path: .
-  command: 'bundle install && bundle exec clockwork script/clock.rb'
-  services:
-    - beertime_postgres
