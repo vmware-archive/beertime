@@ -1,7 +1,7 @@
 tests: setup units printSuccess
 
 units:
-	@rspec
+	@rubocop && rspec
 
 bundle:
 	@bundle install
