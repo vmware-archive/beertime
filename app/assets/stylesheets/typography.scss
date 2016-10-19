@@ -3,8 +3,12 @@ a {
 }
 
 .menu {
+  display: flex;
   padding-left: 0;
   list-style: none;
   font-size: larger;
   line-height: 1.2em;
+  li {
+    margin-left: 1em;
+  }
 }
