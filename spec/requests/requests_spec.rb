@@ -57,4 +57,19 @@ RSpec.describe 'Requests', type: :request do
       expect(response).to have_http_status(200)
     end
   end
+
+  describe 'DELETE /requests/1' do
+    before do
+      service = double('service')
+      allow(service).to receive(:delete).with(1).and_return(true)
+      allow(RequestDeleter).to receive(:new).and_return(service)
+    end
+
+    it 'can delete a request' do
+      delete '/requests/1',
+             headers: @env
+
+      expect(response).to have_http_status(302)
+    end
+  end
 end
