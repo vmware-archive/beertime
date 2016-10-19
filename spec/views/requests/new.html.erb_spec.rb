@@ -9,12 +9,20 @@ RSpec.describe 'requests/new', type: :view do
       )
     ]
     assign(:beers, beers)
+    request = Request.new
+    assign(:request, request)
 
     render
 
     expect(rendered).to include(
       '<li><input type="checkbox"/>Hitachino <a target="_blank" href="http://example.com">' \
       'View More</a></li>'
+    )
+    expect(rendered).to include(
+      '<input type="submit" value="Request"/>'
+    )
+    expect(rendered).to include(
+      'action="/requests"'
     )
   end
 end
