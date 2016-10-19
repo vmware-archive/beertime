@@ -4,10 +4,12 @@ RSpec.describe 'Requests', type: :request do
   describe 'GET /requests/new' do
     it 'renders list of beers' do
       allow(Beer).to receive(:all).and_return(
-        OpenStruct.new(
-          name: 'Hitachino',
-          url: 'http://example.com'
-        )
+        [
+          OpenStruct.new(
+            name: 'Hitachino',
+            url: 'http://example.com'
+          )
+        ]
       )
 
       env = {
