@@ -19,10 +19,7 @@ RSpec.describe 'requests/new', type: :view do
       'View More</a></li>'
     )
     expect(rendered).to include(
-      '<input type="submit" value="Request"/>'
-    )
-    expect(rendered).to include(
-      'action="/requests"'
+      submit_tag("Request")
     )
   end
 end

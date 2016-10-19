@@ -3,6 +3,6 @@
 <% @beers.each do |beer| %>
   <li><input type="checkbox"/><%= beer.name %> <%= link_to("View More", beer.url, target: '_blank')%></li>
 <% end %>
-<input type="submit" value="Request"/>
+<%= f.submit("Request") %>
 </ul>
 <% end %>
