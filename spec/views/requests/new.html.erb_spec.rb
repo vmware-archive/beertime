@@ -15,11 +15,15 @@ RSpec.describe 'requests/new', type: :view do
     render
 
     expect(rendered).to include(
-      '<li><input type="checkbox"/>Hitachino <a target="_blank" href="http://example.com">' \
-      'View More</a></li>'
+      '<input type="checkbox" name="request[beers][]" id="request_beers_" />Hitachino'
     )
+
     expect(rendered).to include(
-      submit_tag("Request")
+      '<a target="_blank" href="http://example.com">View More</a>'
+    )
+
+    expect(rendered).to include(
+      submit_tag('Request')
     )
   end
 end

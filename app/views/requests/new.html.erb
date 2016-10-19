@@ -1,8 +1,8 @@
-<%= form_for @request, url: {action: "create"} do |f| %>
+<%= form_for @request, url: {action: "create"} do |form| %>
 <ul>
 <% @beers.each do |beer| %>
-  <li><input type="checkbox"/><%= beer.name %> <%= link_to("View More", beer.url, target: '_blank')%></li>
+  <li><%= check_box_tag 'request[beers][]', beer.id %><%= beer.name %><%= link_to("View More", beer.url, target: '_blank')%></li>
 <% end %>
-<%= f.submit("Request") %>
+<%= form.submit("Request") %>
 </ul>
 <% end %>
