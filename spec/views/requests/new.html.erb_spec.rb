@@ -13,7 +13,8 @@ RSpec.describe 'requests/new', type: :view do
     render
 
     expect(rendered).to include(
-      '<li>Hitachino <a target="_blank" href="http://example.com">View More</a></li>'
+      '<li><input type="checkbox"/>Hitachino <a target="_blank" href="http://example.com">' \
+      'View More</a></li>'
     )
   end
 end
