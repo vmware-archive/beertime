@@ -1,7 +1,14 @@
 <ul>
 <% @requests.each do |request| %>
   <% request.beers.each do |beer| %>
-    <li><%=request.created_at.strftime("%F")%> <%= beer.name %> <%= link_to("View More", beer.url, target: '_blank')%></li>
+    <li>
+    <%=request.created_at.strftime("%F")%> <%= beer.name %> <%= link_to("View More", beer.url, target: '_blank')%>
+    <%= link_to 'Delete',
+      request,
+      method: :delete,
+      data: {confirm: 'Are you sure you want to cancel this request?'}
+    %>
+    </li>
   <% end %>
 <% end %>
 </ul>

@@ -15,6 +15,9 @@ class RequestsController < ApplicationController
     @requests = Request.all.order(created_at: :desc)
   end
 
+  def destroy
+  end
+
   private
 
   def request_params
