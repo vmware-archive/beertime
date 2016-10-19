@@ -29,19 +29,32 @@ RSpec.describe 'Requests', type: :request do
   end
 
   describe 'POST /requests' do
+    before do
+      service = double('service')
+      allow(service).to receive(:create).with([1, 4]).and_return(true)
+      allow(RequestCreator).to receive(:new).and_return(service)
+    end
+
     it 'can accept a post with no beers selected' do
       post requests_path,
-        params: {request: {beers: []}},
-        headers: @env
+           params: { request: { beers: [] } },
+           headers: @env
       expect(response).to have_http_status(204)
     end
 
-    it 'can accept a post with beer ids' do
+    it 'asks request creation service to create beers' do
       post requests_path,
-        params: {request: {beers: [1, 4]}},
-        headers: @env
+           params: { request: { beers: [1, 4] } },
+           headers: @env
 
-      expect(response).to have_http_status(204)
+      expect(response).to have_http_status(302)
+    end
+  end
+
+  describe 'GET /requests' do
+    it 'can accept a get' do
+      get requests_path, headers: @env
+      expect(response).to have_http_status(200)
     end
   end
 end

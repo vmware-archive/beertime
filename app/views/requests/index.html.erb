@@ -1,0 +1,7 @@
+<ul>
+<% @requests.each do |request| %>
+  <% request.beers.each do |beer| %>
+    <li><%=request.created_at.strftime("%F")%> <%= beer.name %> <%= link_to("View More", beer.url, target: '_blank')%></li>
+  <% end %>
+<% end %>
+</ul>

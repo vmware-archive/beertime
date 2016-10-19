@@ -6,14 +6,22 @@ class RequestsController < ApplicationController
 
   def create
     request = request_params[:request]
-    if request
-      beer_ids = request[:beers]
-    end
+    return false unless request
+    return false unless service.create(request[:beers].map(&:to_i))
+    redirect_to(:requests)
+  end
+
+  def index
+    @requests = Request.all
   end
 
   private
 
   def request_params
-    params.permit({request: {beers: []}})
+    params.permit(request: { beers: [] })
+  end
+
+  def service
+    @service ||= RequestCreator.new
   end
 end
