@@ -29,8 +29,18 @@ RSpec.describe 'Requests', type: :request do
   end
 
   describe 'POST /requests' do
-    it 'can accept a post' do
-      post requests_path, env: @env
+    it 'can accept a post with no beers selected' do
+      post requests_path,
+        params: {request: {beers: []}},
+        headers: @env
+      expect(response).to have_http_status(204)
+    end
+
+    it 'can accept a post with beer ids' do
+      post requests_path,
+        params: {request: {beers: [1, 4]}},
+        headers: @env
+
       expect(response).to have_http_status(204)
     end
   end
