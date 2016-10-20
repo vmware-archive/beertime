@@ -60,9 +60,9 @@ RSpec.describe 'Requests', type: :request do
 
   describe 'DELETE /requests/1' do
     before do
-      service = double('service')
-      expect(service).to receive(:delete).with(1).and_return(true)
-      expect(RequestDeleter).to receive(:new).and_return(service)
+      request_deleter = double('request_deleter')
+      expect(RequestDeleter).to receive(:new).and_return(request_deleter)
+      expect(request_deleter).to receive(:delete).with(request_id: 1).and_return(true)
     end
 
     it 'can delete a request' do

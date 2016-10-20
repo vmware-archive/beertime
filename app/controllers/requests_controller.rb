@@ -17,7 +17,7 @@ class RequestsController < ApplicationController
   end
 
   def destroy
-    return unless delete_service.delete(params[:id].to_i)
+    return unless delete_service.delete(request_id: params[:id].to_i)
     redirect_to(:requests)
   end
 
