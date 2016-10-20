@@ -8,7 +8,7 @@ class RequestsController < ApplicationController
   def create
     request = request_params[:request]
     return unless request
-    return unless create_service.create(name: request[:name], beer_ids: request[:beers].map(&:to_i))
+    create_service.create(name: request[:name], beer_ids: request[:beers].map(&:to_i))
     redirect_to(:requests)
   end
 
@@ -17,7 +17,7 @@ class RequestsController < ApplicationController
   end
 
   def destroy
-    return unless delete_service.delete(request_id: params[:id].to_i)
+    delete_service.delete(request_id: params[:id].to_i)
     redirect_to(:requests)
   end
 

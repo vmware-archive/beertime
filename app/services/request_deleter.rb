@@ -1,8 +1,6 @@
 # frozen_string_literal: true
 class RequestDeleter
   def delete(request_id:)
-    request = Request.find(request_id)
-    request.destroy!
-    true
+    Request.destroy(request_id)
   end
 end
