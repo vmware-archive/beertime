@@ -1,11 +1,22 @@
 @import 'colors';
+@import 'layout';
+
+$logo-size: 6rem;
 
 .beertime {
   align-items: center;
   flex-direction: column;
-  .title {
-    color: $dark-base;
-    font-family: 'Bungee', cursive;
+  .header {
+    display: flex;
+    align-items: center;
+    img {
+      width: $logo-size;
+      margin-right: $default-margin;
+    }
+    .title {
+      color: $dark-base;
+      font-family: 'Bungee', cursive;
+    }
   }
   ul {
     list-style: none;

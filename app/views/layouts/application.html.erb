@@ -9,7 +9,10 @@
 
   <body>
     <div class="beertime">
-      <h1 class="title">beer time</h1>
+      <div class="header">
+        <%= image_tag "pivotal-beer-time-logo.svg" %>
+        <h1 class="title">beer time</h1>
+      </div>
       <ul class="menu">
         <li><%= link_to "REQUEST BEERS", new_request_path %></li>
         <li><%= link_to "ORDER HISTORY", requests_path %></li>
