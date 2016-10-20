@@ -35,7 +35,7 @@ RSpec.describe 'Requests', type: :request do
            params: {},
            headers: @env
 
-      expect(response).to have_http_status(204)
+      expect(response).to have_http_status(302)
     end
 
     it 'asks request creation service to create beers' do

@@ -7,8 +7,9 @@ class RequestsController < ApplicationController
 
   def create
     request = request_params[:request]
-    return unless request
-    create_service.create(name: request[:name], beer_ids: request[:beers].map(&:to_i))
+    if request && request[:beers]
+      create_service.create(name: request[:name], beer_ids: request[:beers].map(&:to_i))
+    end
     redirect_to(:requests)
   end
 
