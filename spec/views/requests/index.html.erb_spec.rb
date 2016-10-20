@@ -2,22 +2,22 @@ require 'rails_helper'
 
 RSpec.describe 'requests/index', type: :view do
   it 'shows list of requested beers' do
-    beers = [
-      OpenStruct.new(
-        name: 'Hitachino',
-        url: 'http://example.com'
-      )
-    ]
-    request = Request.new(
-      created_at: Time.now
+    now = Time.now
+    beer = OpenStruct.new(
+      name: 'Hitachino',
+      url: 'http://example.com'
     )
-    allow(request).to receive(:beers).and_return(beers)
+    request = Request.new(
+      created_at: now
+    )
+    allow(request).to receive(:beer).and_return(beer)
+
     assign(:requests, [request])
 
     render
 
     expect(rendered).to include(
-      '2016-10-19 Hitachino'
+      "#{now.strftime('%F')} Hitachino"
     )
   end
 end

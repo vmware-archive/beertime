@@ -13,18 +13,19 @@ RSpec.describe 'RequestCreator', type: :model do
       allow(Beer).to receive(:find).with(4).and_return(
         Beer.new(
           id: 4,
-          name: 'Hitachino',
+          name: 'Kagua',
           url: 'http://example.com'
         )
       )
+
+      expect(Request).to receive(:create!).with(beer_id: 1)
+      expect(Request).to receive(:create!).with(beer_id: 4)
+
       service = RequestCreator.new
 
       response = service.create([1, 4])
 
       expect(response).to eq(true)
-      expect(Request.count).to eq(1)
-      request = Request.first
-      expect(request.beers.count).to eq(2)
     end
   end
 end
