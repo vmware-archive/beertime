@@ -1,5 +1,7 @@
 tests: setup units printSuccess
 
+citests: cisetup units printSuccess
+
 units:
 	@rubocop && rspec
 
@@ -10,6 +12,11 @@ printSuccess:
 	@./bin/printSuccess.sh
 
 setup:
+	@rails db:migrate RAILS_ENV=test
+
+cisetup:
+	@rails db:drop RAILS_ENV=test
+	@rails db:create RAILS_ENV=test
 	@rails db:migrate RAILS_ENV=test
 
 deploy:
