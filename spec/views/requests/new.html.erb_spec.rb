@@ -4,6 +4,7 @@ RSpec.describe 'requests/new', type: :view do
   it 'shows view more links' do
     beers = [
       OpenStruct.new(
+        id: 1,
         name: 'Hitachino',
         url: 'http://example.com'
       )
@@ -14,16 +15,9 @@ RSpec.describe 'requests/new', type: :view do
 
     render
 
-    expect(rendered).to include(
-      '<input type="checkbox" name="request[beers][]" id="request_beers_" />Hitachino'
-    )
-
-    expect(rendered).to include(
-      '<a target="_blank" href="http://example.com">View More</a>'
-    )
-
-    expect(rendered).to include(
-      submit_tag('Request')
-    )
+    assert_select 'input[type="checkbox"][value="1"]'
+    assert_select 'a[href="http://example.com"]', 'View More'
+    assert_select 'input[type="text"][name="request[name]"]'
+    assert_select 'input[type="submit"]'
   end
 end

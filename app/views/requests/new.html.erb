@@ -3,6 +3,8 @@
 <% @beers.each do |beer| %>
   <li><%= check_box_tag 'request[beers][]', beer.id %><%= beer.name %> <%= link_to("View More", beer.url, target: '_blank')%></li>
 <% end %>
+<%= form.label :name %>
+<%= form.text_field :name %>
 <%= form.submit("Request") %>
 </ul>
 <% end %>

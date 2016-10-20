@@ -1,7 +1,15 @@
 <ul>
 <% @requests.each do |request| %>
   <li>
-  <%=request.created_at.strftime("%F")%> <%= request.beer.name %> <%= link_to("View More", request.beer.url, target: '_blank')%>
+  <span class="datetime"><%=request.created_at.strftime("%F")%></span>
+  <span class="beer-name"><%= request.beer.name %></span>
+  <label>
+    Requested By:
+    <span class="requester-name">
+      <%= request.name %>
+    </span>
+  </label>
+  <%= link_to("View More", request.beer.url, target: '_blank')%>
   <%= link_to 'Delete',
     request,
     method: :delete,

@@ -6,8 +6,8 @@ class RequestsController < ApplicationController
 
   def create
     request = request_params[:request]
-    return false unless request
-    return false unless create_service.create(request[:beers].map(&:to_i))
+    return unless request
+    return unless create_service.create(request[:name], request[:beers].map(&:to_i))
     redirect_to(:requests)
   end
 
@@ -16,14 +16,14 @@ class RequestsController < ApplicationController
   end
 
   def destroy
-    return false unless delete_service.delete(params[:id].to_i)
+    return unless delete_service.delete(params[:id].to_i)
     redirect_to(:requests)
   end
 
   private
 
   def request_params
-    params.permit(request: { beers: [] })
+    params.permit(request: [:name, { beers: [] }])
   end
 
   def create_service

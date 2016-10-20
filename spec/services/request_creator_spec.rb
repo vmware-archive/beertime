@@ -18,12 +18,12 @@ RSpec.describe 'RequestCreator', type: :model do
         )
       )
 
-      expect(Request).to receive(:create!).with(beer_id: 1)
-      expect(Request).to receive(:create!).with(beer_id: 4)
+      expect(Request).to receive(:create!).with(name: 'Bob', beer_id: 1)
+      expect(Request).to receive(:create!).with(name: 'Bob', beer_id: 4)
 
       service = RequestCreator.new
 
-      response = service.create([1, 4])
+      response = service.create('Bob', [1, 4])
 
       expect(response).to eq(true)
     end
