@@ -32,7 +32,7 @@ RSpec.describe 'Requests', type: :request do
   describe 'POST /requests' do
     it 'can accept a post with no beers selected' do
       post requests_path,
-           params: {},
+           params: { request: { name: '' } },
            headers: @env
 
       expect(response).to have_http_status(302)
