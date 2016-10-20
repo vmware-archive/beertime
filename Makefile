@@ -1,6 +1,6 @@
 tests: setup units printSuccess
 
-citests: cisetup units printSuccess
+citests: bundle cisetup units printSuccess
 
 units:
 	@rubocop && rspec
