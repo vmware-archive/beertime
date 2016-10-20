@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 require 'rails_helper'
 
 RSpec.describe 'RequestCreator', type: :model do
@@ -23,7 +24,7 @@ RSpec.describe 'RequestCreator', type: :model do
 
       service = RequestCreator.new
 
-      response = service.create('Bob', [1, 4])
+      response = service.create(name: 'Bob', beer_ids: [1, 4])
 
       expect(response).to eq(true)
     end

@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 require 'rails_helper'
 
 RSpec.describe 'Requests', type: :request do
@@ -39,7 +40,7 @@ RSpec.describe 'Requests', type: :request do
 
     it 'asks request creation service to create beers' do
       service = double('service')
-      expect(service).to receive(:create).with('Bob', [1, 4]).and_return(true)
+      expect(service).to receive(:create).with(name: 'Bob', beer_ids: [1, 4]).and_return(true)
       expect(RequestCreator).to receive(:new).and_return(service)
 
       post requests_path,

@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 class RequestsController < ApplicationController
   def new
     @beers = Beer.all
@@ -7,7 +8,7 @@ class RequestsController < ApplicationController
   def create
     request = request_params[:request]
     return unless request
-    return unless create_service.create(request[:name], request[:beers].map(&:to_i))
+    return unless create_service.create(name: request[:name], beer_ids: request[:beers].map(&:to_i))
     redirect_to(:requests)
   end
 
