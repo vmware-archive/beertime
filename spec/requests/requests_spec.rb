@@ -29,20 +29,19 @@ RSpec.describe 'Requests', type: :request do
   end
 
   describe 'POST /requests' do
-    before do
-      service = double('service')
-      allow(service).to receive(:create).with([1, 4]).and_return(true)
-      allow(RequestCreator).to receive(:new).and_return(service)
-    end
-
     it 'can accept a post with no beers selected' do
       post requests_path,
-           params: { request: { beers: [] } },
+           params: {},
            headers: @env
+
       expect(response).to have_http_status(204)
     end
 
     it 'asks request creation service to create beers' do
+      service = double('service')
+      expect(service).to receive(:create).with([1, 4]).and_return(true)
+      expect(RequestCreator).to receive(:new).and_return(service)
+
       post requests_path,
            params: { request: { beers: [1, 4] } },
            headers: @env
@@ -61,8 +60,8 @@ RSpec.describe 'Requests', type: :request do
   describe 'DELETE /requests/1' do
     before do
       service = double('service')
-      allow(service).to receive(:delete).with(1).and_return(true)
-      allow(RequestDeleter).to receive(:new).and_return(service)
+      expect(service).to receive(:delete).with(1).and_return(true)
+      expect(RequestDeleter).to receive(:new).and_return(service)
     end
 
     it 'can delete a request' do
