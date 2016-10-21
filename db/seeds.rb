@@ -31,6 +31,12 @@ Beer.create(
     { name: '富士桜高原麦酒１２本セット（ピルス・ヴァイツェン・ラオホ・シュヴァルツヴァイツェン各３本ずつ） ',
       url: 'https://www.amazon.co.jp/dp/B00IP3ZIMY' },
     { name: 'ドゥシャス・デ・ブルゴーニュ 330ml×24本 (DUCHESSE DE BOURGOGNE)',
-      url: 'https://www.amazon.co.jp/dp/B007M6RUNU' }
-  ]
+      url: 'https://www.amazon.co.jp/dp/B007M6RUNU' },
+    { name: '常陸野ネスト だいだいエール IPA 24本',
+      url: 'https://www.amazon.co.jp/dp/B00HA3LS2E' },
+    { name: '水曜日のネコ 350ml 8缶セット',
+      url: 'https://www.amazon.co.jp/dp/B00BB9K3M4' },
+    { name: 'ブルワリー直送 志賀高原ビール クラフトビール 飲み比べセット 6種12本 セット 玉村本店 【 長野県 地ビール 】',
+      url: 'https://www.amazon.co.jp/dp/B01APE4SG2' }
+    ]
 )
