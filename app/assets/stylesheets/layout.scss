@@ -1,12 +1,13 @@
 @import 'colors';
 
-$default-margin: 1rem;
-
 body {
   color: $dark-base;
   background: $light-base;
   font-family: "Courier", monospace;
   font-size: 1rem;
+  .main-area {
+    width: 66%
+  }
 }
 
 .beertime {

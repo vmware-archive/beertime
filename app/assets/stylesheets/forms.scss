@@ -1,0 +1,19 @@
+@import 'colors';
+$field-height: 2rem;
+
+.form {
+  display: flex;
+  flex-direction: column;
+
+  input[type="text"], input[type="submit"] {
+    font-size: 0.75em;
+    height: $field-height;
+    margin-bottom: 1em;
+  }
+
+  input[type="submit"] {
+    border: 0;
+    background: $primary;
+    color: $light-accent;
+  }
+}
