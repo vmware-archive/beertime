@@ -21,7 +21,7 @@ RSpec.describe 'requests/index', type: :view do
     render
 
     assert_select 'span[class="datetime"]', now.strftime('%F')
-    assert_select 'span[class="beer-name"]', 'Hitachino'
+    assert_select 'span[class="item-name"]', 'Hitachino'
     assert_select 'span[class="requester-name"]', 'Bob'
     assert_select 'a[href="http://example.com"]', 'View More'
     assert_select 'a[href="/requests/1"]', 'Delete'

@@ -1,20 +1,24 @@
-<ul>
+<ul class='basic-list'>
 <% @requests.each do |request| %>
-  <li>
-  <span class="datetime"><%=request.created_at.strftime("%F")%></span>
-  <span class="beer-name"><%= request.beer.name %></span>
-  <label>
-    Requested By:
-    <span class="requester-name">
-      <%= request.name %>
-    </span>
-  </label>
-  <%= link_to("View More", request.beer.url, target: '_blank')%>
-  <%= link_to 'Delete',
-    request,
-    method: :delete,
-    data: {confirm: 'Are you sure you want to cancel this request?'}
-  %>
+  <li class="item-details">
+  <span class="item-name"><%= request.beer.name %></span>
+  <div>
+    <span class="datetime"><%=request.created_at.strftime("%F")%></span>
+    <label>
+      Requested By:
+      <span class="requester-name">
+        <%= request.name %>
+      </span>
+    </label>
+  </div>
+  <div>
+    <%= link_to("View More", request.beer.url, target: '_blank')%>
+    <%= link_to 'Delete',
+      request,
+      method: :delete,
+      data: {confirm: 'Are you sure you want to cancel this request?'}
+    %>
+  </div>
   </li>
 <% end %>
 </ul>

@@ -1,7 +1,13 @@
 <%= form_for @request, url: {action: "create"}, html: {class: 'form'} do |form| %>
-<ul>
+<ul class='basic-list'>
 <% @beers.each do |beer| %>
-  <li><%= check_box_tag 'request[beers][]', beer.id %><%= beer.name %> <%= link_to("View More", beer.url, target: '_blank')%></li>
+  <li>
+    <%= check_box_tag 'request[beers][]', beer.id %>
+    <div class='item-details'>
+      <span class="item-name"><%= beer.name %></span>
+      <%= link_to("View More", beer.url, target: '_blank')%>
+    </div>
+  </li>
 <% end %>
 </ul>
 <%= form.text_field :name, placeholder: 'Enter your name...' %>
