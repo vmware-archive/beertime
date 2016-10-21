@@ -1,3 +1,6 @@
+@import 'colors';
+
 a {
-  color: inherit;
+  color: $primary;
+  font-weight: bold;
 }

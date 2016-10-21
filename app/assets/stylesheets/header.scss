@@ -16,4 +16,17 @@ $logo-size: 6rem;
       font-family: 'Bungee', cursive;
     }
   }
+  .menu {
+    display: flex;
+    padding-left: 0;
+    list-style: none;
+    font-size: larger;
+    line-height: 1.2em;
+    text-transform: capitalize;
+    li {
+      font-weight: bold;
+      margin-left: 2em;
+      margin-right: 2em;
+    }
+  }
 }
