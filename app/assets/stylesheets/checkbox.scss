@@ -1,0 +1,31 @@
+@import 'forms';
+
+.custom-checkbox {
+  position: relative;
+  label {
+    // style for the checkbox
+    width: $field-height;
+    height: $field-height;
+    background-color: $primary;
+    position: absolute;
+    top: 0;
+    left: 0;
+    &:after {
+      // style for the checkmark
+      content: '✓';
+      color: $light-accent;
+      line-height: 1.4em;
+      margin-left: 0.3em;
+      opacity: 0;
+    }
+    &:hover::after {
+      opacity: 0;
+    }
+  }
+  input[type=checkbox] {
+    visibility: hidden;
+    &:checked + label:after {
+      opacity: 1;
+    }
+  }
+}

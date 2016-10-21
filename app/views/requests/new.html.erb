@@ -1,8 +1,11 @@
 <%= form_for @request, url: {action: "create"}, html: {class: 'form'} do |form| %>
 <ul class='basic-list'>
-<% @beers.each do |beer| %>
+<% @beers.each_with_index do |beer, index| %>
   <li>
-    <%= check_box_tag 'request[beers][]', beer.id %>
+    <div class="custom-checkbox">
+      <%= check_box_tag 'request[beers][]', beer.id, false, { id: "beer_#{index}" } %>
+      <%= label_tag "beer_#{index}", '' %>
+    </div>
     <div class='item-details'>
       <span class="item-name"><%= beer.name %></span>
       <%= link_to("View More", beer.url, target: '_blank')%>
