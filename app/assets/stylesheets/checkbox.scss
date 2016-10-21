@@ -1,13 +1,15 @@
 @import 'forms';
 
 .custom-checkbox {
-  position: relative;
+  display: flex;
+  align-items: center;
+  margin-right: 1em;
   label {
     // style for the checkbox
+    display: flex;
     width: $field-height;
     height: $field-height;
     background-color: $primary;
-    display: flex;
     &:after {
       // style for the checkmark
       content: '✓';
@@ -21,7 +23,7 @@
     }
   }
   input[type=checkbox] {
-    visibility: hidden;
+    display: none;
     &:checked + label:after {
       opacity: 1;
     }
