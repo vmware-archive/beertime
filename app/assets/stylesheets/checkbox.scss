@@ -7,9 +7,7 @@
     width: $field-height;
     height: $field-height;
     background-color: $primary;
-    position: absolute;
-    top: 0;
-    left: 0;
+    display: flex;
     &:after {
       // style for the checkmark
       content: '✓';
