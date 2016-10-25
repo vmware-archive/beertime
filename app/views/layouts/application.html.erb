@@ -16,6 +16,7 @@
       <ul class="menu">
         <li><%= link_to_unless_current "pending requests", requests_path %></li>
         <li><%= link_to_unless_current "request beers", new_request_path %></li>
+        <li><%= link_to_unless_current "add a beer", new_beer_path %></li>
       </ul>
       <div class="main-area">
         <%= yield %>
