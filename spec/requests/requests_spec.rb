@@ -11,6 +11,13 @@ RSpec.describe 'Requests', type: :request do
     }
   end
 
+  describe 'GET /requests' do
+    it 'can accept a get' do
+      get requests_path, headers: @env
+      expect(response).to have_http_status(200)
+    end
+  end
+
   describe 'GET /requests/new' do
     it 'renders list of beers' do
       allow(Beer).to receive(:all).and_return(
@@ -48,13 +55,6 @@ RSpec.describe 'Requests', type: :request do
            headers: @env
 
       expect(response).to have_http_status(302)
-    end
-  end
-
-  describe 'GET /requests' do
-    it 'can accept a get' do
-      get requests_path, headers: @env
-      expect(response).to have_http_status(200)
     end
   end
 

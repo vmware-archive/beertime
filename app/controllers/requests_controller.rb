@@ -1,5 +1,9 @@
 # frozen_string_literal: true
 class RequestsController < ApplicationController
+  def index
+    @requests = Request.all.order(created_at: :desc)
+  end
+
   def new
     @beers = Beer.all
     @request = Request.new
@@ -11,10 +15,6 @@ class RequestsController < ApplicationController
       create_service.create(name: request[:name], beer_ids: request[:beers].map(&:to_i))
     end
     redirect_to(:requests)
-  end
-
-  def index
-    @requests = Request.all.order(created_at: :desc)
   end
 
   def destroy
